@@ -1,14 +1,16 @@
 mod template;
 
 use actix_web::{web, App, HttpServer};
-use template::render_page;
-// Use random
+use env_logger;
 use rand::random;
+use template::render_page;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+    std::env::set_var("RUST_LOG", "info");
+    env_logger::init();
     let host_address = "localhost:8080";
-    println!("Starting server at http://{}", host_address);
+    log::info!("Starting server at http://{}", host_address);
     HttpServer::new(|| {
         App::new()
             .route(

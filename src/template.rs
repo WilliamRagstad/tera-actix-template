@@ -18,7 +18,7 @@ pub async fn render_page<T>(template: &'static str, vars: Vec<(&'static str, T)>
 where
     T: serde::Serialize,
 {
-    log::info!("Rendering page: {}", template);
+    log::info!("Rendering: {}", template);
     let mut context = tera::Context::new();
     for (key, value) in vars {
         context.insert(key.to_string(), &value);
