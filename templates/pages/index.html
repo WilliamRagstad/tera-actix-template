@@ -1,0 +1,31 @@
+{% extends "base/page.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Home</h1>
+<p>
+	Welcome to the home page! <br>
+<table>
+	<thead>
+		<tr>
+			<th>Key</th>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>name</td>
+			<td>{{ name }}</td>
+		</tr>
+		<tr>
+			<td>age</td>
+			<td>{{ age }}</td>
+		</tr>
+		<tr>
+			<td>location</td>
+			<td>{{ location }}</td>
+		</tr>
+	</tbody>
+</table>
+</p>
+{% endblock %}
