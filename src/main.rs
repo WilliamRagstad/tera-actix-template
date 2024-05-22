@@ -34,7 +34,7 @@ async fn main() -> std::io::Result<()> {
                     )
                 }),
             )
-            .service(actix_files::Files::new("/static", "public").show_files_listing())
+            .service(actix_files::Files::new("public", "public").show_files_listing())
     })
     .bind(host_address)?
     .run()
